@@ -3,38 +3,49 @@ Declare uma variável chamada `sum` e atribua a ela uma função chamada
 `calculateSum`. A função deve receber dois parâmetros e retornar a soma
 desses parâmetros.
 */
-// ?
+let sun = function calculateSum(a,b){
+	return a + b;
+}
+
+console.log(sun(2,3))
 
 /*
 Invoque a função criada acima, passando dois números que serão somados, e mostre
 o resultado no console, com a frase:
 "A soma de [VALOR 1] e [VALOR2] é igual a [RESULTADO]."
 */
-// ?
+let a = 2
+let b = 3
+console.log(`A soma de ${a} e ${b} é igual a ${sun(2,3)}.`)
 
 /*
 Mostre no console o nome da função criada acima, com a frase:
 "O nome da função que faz a soma é [NOME DA FUNÇÃO]."
 */
-// ?
+console.log(`O nome da função que faz a soma é ${sun.name}.`)
 
 /*
 Crie uma função literal chamada `showName`. Essa função deve retornar o
 seu nome.
 */
-// ?
+function showName(){
+	return `Rubens Filipe`
+}
+
+console.log(showName())
 
 /*
 Declare uma variável chamada `varShowName` que recebe a função criada acima.
 */
-// ?
+let varShowName = showName()
+console.log(varShowName)
 
 /*
 Usando a variável criada acima, mostre no console o nome e o retorno da função
 atribuída a ela, com a seguinte frase:
 "A função [NOME DA FUNÇÃO] retorna [RETORNO DA FUNÇÃO]."
 */
-// ?
+console.log(`A função ${showName.name} retorna ${showName()}.`)
 
 /*
 Crie uma função literal chamada `calculator`, que funcione assim:
@@ -48,28 +59,65 @@ vai efetuar. Será uma string com os valores `+`, `-`, `*`, `/` ou `%`;
   - Se o operador não for válido, retornar a frase:
   "Operação inválida."
 */
-// ?
+function calculator(param){
+	return function (a,b){
+		switch(param){
+			case '+':
+				return `${a} ${param} ${b} = ${a+b}`
+			break;
+			case '-':
+				return `${a} ${param} ${b} = ${a-b}`
+			break;
+			case '/':
+				return `${a} ${param} ${b} = ${a/b}`
+			break;
+			case '*':
+				return `${a} ${param} ${b} = ${a*b}`
+			break;
+			case '%':
+				return `${a} ${param} ${b} = ${a%b}`
+			break;
+			default:
+				return `Operação inválida.`
+		}
+	}
+}
+
+
+console.log(calculator('-')(6,4))
+console.log(calculator('*')(2,10))
+console.log(calculator('/')(2,10))
+console.log(calculator('%')(2,10))
+console.log(calculator('@')(2,10))
 
 /*
 Declare uma variável chamada `sum`, que receberá a função acima, passando como
 parâmetro o operador de soma.
 */
-// ?
+let sum = calculator('+')
 
 /*
 Agora `sum` é uma função. Mostre no console a soma de dois números, usando ela.
 */
-// ?
+console.log(sum(80,7))
 
 /*
 Agora, declare algumas variáveis com os nomes `subtraction`, `multiplication`,
 `division` e `mod`, e atribua a elas a função `calculator`, passando o operador
 correto por parâmetro para cada uma delas.
 */
-// ?
+let subtraction = calculator('-')
+let multiplication = calculator('*')
+let division = calculator('/')
+let mod = calculator('%')
+let error = calculator('@')
 
 /*
 Faça uma operação com cada uma das funções criadas acima, mostrando o resultado
 no console.
 */
-// ?
+console.log(subtraction(6,4))
+console.log(multiplication(2,10))
+console.log(division(2,10))
+console.log(mod(2,10))
+console.log(error(2,10))
