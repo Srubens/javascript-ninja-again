@@ -1,0 +1,25 @@
+/*.box_flex{
+	display: flex;
+}*/
+
+.flex{
+	display: flex;
+}
+
+.box_plus{
+	position: absolute;
+	top: 29px;
+	left: 150px;
+}
+
+.btn_equal{
+	height: 97px;
+}
+
+button{
+	margin: 2px;
+}
+
+.btn_mult{
+	width: 60px;
+}
