@@ -1,3 +1,7 @@
+(function (){
+
+"use script";
+
 /*
 O desafio dessa semana é criar uma mini library (biblioteca) para
 reutilizarmos nossos códigos quando fizermos manipulação de DOM!
@@ -17,13 +21,40 @@ selecionados.
 Dica: olhe os erros que acontecem no console, e vá resolvendo um a um.
 Só passe para o próximo problema quando tiver resolvido o anterior :)
 */
-// ?
+
+function DOM(elements){
+	this.element = this.getDOMElements(elements)
+}
+
+DOM.prototype.getDOMElements = function getDOMElements(elements){
+	return document.querySelectorAll(elements)
+}
+
+DOM.prototype.on = function on(eventType, callBack){
+	Array.prototype.forEach.call(this.element, function (element){
+		element.removeEventListener(eventType, callBack, false)
+	})
+}
+
+DOM.prototype.off = function off(eventType, callBack){
+	Array.prototype.forEach.call(this.element, function (element){
+		element.removeEventListener(eventType, callBack, false)
+	})
+}
+
+DOM.prototype.get = function get(){
+	return this.element;
+}
 
 var $a = new DOM('[data-js="link"]');
 $a.on('click', function(e) {
   e.preventDefault();
   console.log('clicou');
+  $a.off('click', handleClick);
 });
 
 console.log('Elementos selecionados:', $a.get());
 console.log('$a é filho de body?', $a.get()[0].parentNode === document.body);
+
+
+})()
