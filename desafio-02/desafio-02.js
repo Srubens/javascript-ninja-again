@@ -48,7 +48,7 @@ Crie uma função com as seguintes características:
 // ?
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-// 98
+// ?
 
 /*
 Crie uma função com as seguintes características:
