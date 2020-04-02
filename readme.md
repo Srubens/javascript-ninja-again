@@ -8,3 +8,7 @@ MODULO - 1
 - OPERADORES
     OPERADORES ARITMÉTICOS ADIÇÃO '+', SUBTRAÇÃO '-', MULTIPLICAÇÃO '*', DIVISÃO '/'
     OPERADORES ARITMÉTICOS ABREVIADOS ++, --, +=, -=, *=, /=
+    OPERADORES DE IGUALDADE ==, === E OPERADORES RELACIONAIS !=, !==
+    '>', '<', '>=', '<='
+- FUNÇÕES
+    function nomedafuncao(){}
